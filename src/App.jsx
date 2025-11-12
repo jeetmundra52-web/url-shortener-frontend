@@ -4,6 +4,7 @@ import LinkList from "./components/LinkList.jsx";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 
 export default function App() {
+  console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
   const [links, setLinks] = useState(() => {
     try { return JSON.parse(localStorage.getItem("links")) || []; }
     catch { return []; }
