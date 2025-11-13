@@ -2,14 +2,26 @@
   "rewrites": [
     {
       "source": "/:code",
-      "destination": "/api/[code]"
+      "destination": "/api/[code]",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-rewrite"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:code",
+      "headers": [
+        {
+          "key": "x-vercel-rewrite",
+          "value": "true"
+        }
+      ]
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "functions": {
-    "api/[code].js": {
-      "maxDuration": 10
-    }
-  }
+  "trailingSlash": false
 }
