@@ -1,21 +1,11 @@
 {
-  "rewrites": [
-    {
-      "source": "/:code",
-      "destination": "/api/[code]"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/:code",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0"
-        }
-      ]
-    }
-  ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/:code", "destination": "/api/[code]" }
+  ],
+  "redirects": [
+    { "source": "/BASE_URL=:path*", "destination": "/", "permanent": false }
+  ]
 }
