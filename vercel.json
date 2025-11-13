@@ -2,13 +2,7 @@
   "rewrites": [
     {
       "source": "/:code",
-      "destination": "/api/[code]",
-      "has": [
-        {
-          "type": "header",
-          "key": "x-vercel-rewrite"
-        }
-      ]
+      "destination": "/api/[code]"
     }
   ],
   "headers": [
@@ -16,8 +10,8 @@
       "source": "/:code",
       "headers": [
         {
-          "key": "x-vercel-rewrite",
-          "value": "true"
+          "key": "Cache-Control",
+          "value": "public, max-age=0"
         }
       ]
     }
