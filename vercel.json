@@ -1,11 +1,11 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/:code", "destination": "/api/[code]" }
-  ],
   "redirects": [
-    { "source": "/BASE_URL=:path*", "destination": "/", "permanent": false }
-  ]
+    {
+      "source": "/:code",
+      "destination": "https://url-shortener-backend-crhl.onrender.com/:code",
+      "permanent": false
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
