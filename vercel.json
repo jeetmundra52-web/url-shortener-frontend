@@ -4,5 +4,12 @@
       "source": "/:code",
       "destination": "/api/[code]"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/[code].js": {
+      "maxDuration": 10
+    }
+  }
 }
