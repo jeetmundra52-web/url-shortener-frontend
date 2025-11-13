@@ -1,4 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+//const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_BASE = "https://url-shortener-backend-crhl.onrender.com";
 
 export const shortenUrl = (originalUrl, customCode, expiryDays) =>
   fetch(`${API_BASE}/api/shorten`, {
